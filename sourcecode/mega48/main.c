@@ -168,7 +168,10 @@ usbRequest_t    *rq = (void *)data;
         /*    SET_LINE_CODING -> usbFunctionWrite()    */
         }
         if(rq->bRequest == SET_CONTROL_LINE_STATE){
-            UART_CTRL_PORT	= (UART_CTRL_PORT&~(1<<UART_CTRL_DTR))|((rq->wValue.word&1)<<UART_CTRL_DTR);
+            //UART_CTRL_PORT	= (UART_CTRL_PORT&~(1<<UART_CTRL_DTR))|((rq->wValue.word&1)<<UART_CTRL_DTR);
+            UART_CTRL_PORT	= (UART_CTRL_PORT&~(1<<UART_CTRL_DTR))|(0<<UART_CTRL_DTR);
+            _delay_ms(5);
+            UART_CTRL_PORT	= (UART_CTRL_PORT&~(1<<UART_CTRL_DTR))|(1<<UART_CTRL_DTR);
 
 #if USB_CFG_HAVE_INTRIN_ENDPOINT3
             /* Report serial state (carrier detect). On several Unix platforms,

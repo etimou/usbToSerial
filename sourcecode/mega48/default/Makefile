@@ -7,14 +7,14 @@ PROJECT = cdcmega
 
 #MCU = atmega8
 #MCU = atmega16
-MCU = atmega48
+#MCU = atmega48
 #MCU = atmega88
 #MCU = atmega168
-#MCU = atmega328p
+MCU = atmega328p
 
-CLK = 12000000UL
+#CLK = 12000000UL
 #CLK = 15000000UL
-#CLK = 16000000UL
+CLK = 16000000UL
 #CLK = 18000000UL
 #CLK = 20000000UL
 
